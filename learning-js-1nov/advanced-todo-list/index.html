@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Animate.css CDN for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="flex flex-col items-center py-10 bg-gray-100 min-h-screen">
+<h1 class="text-4xl font-bold mb-10 text-blue-600">Advanced To-Do List</h1>
+
+<div id="task-form" class="flex items-center space-x-3 mb-8">
+    <input type="text" id="task-input" placeholder="Enter task" class="px-3 py-2 border rounded shadow-sm focus:outline-none">
+    <select id="priority-input" class="px-3 py-2 border rounded shadow-sm">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+    <input type="date" id="due-date-input" class="px-3 py-2 border rounded shadow-sm">
+    <button onclick="addTask()" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition duration-300">Add Task</button>
+</div>
+
+<div id="filters" class="flex space-x-3 mb-6">
+    <select id="filter-priority" onchange="filterTasks()" class="px-3 py-2 border rounded shadow-sm">
+        <option value="All">All Priorities</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+    <input type="date" id="filter-date" onchange="filterTasks()" class="px-3 py-2 border rounded shadow-sm">
+</div>
+
+<ul id="task-list" class="w-full max-w-md space-y-2"></ul>
+
+<script src="script.js"></script>
+</body>
+</html>
